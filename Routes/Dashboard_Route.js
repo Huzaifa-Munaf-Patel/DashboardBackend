@@ -20,8 +20,8 @@ router.post("/add_test", async (req,res) => {
 })
 
 router.get("/getTests/:keyName", async (req, res) => {
-    const {keyName} = useParams;
-    
+    const {keyName} = req.Params;
+
     const data = await Test.find({keyName});
     res.json(data);
 })
