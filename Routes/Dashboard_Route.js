@@ -26,5 +26,12 @@ router.get("/getTests/:keyName", async (req, res) => {
     res.json(data);
 })
 
+router.get("/deleteTest/:id", async (req, res) => {
+    const {id} = req.params;
+
+    const data = await Test.findByIdAndDelete(id);
+    res.json(data);
+})
+
 module.exports = router;
 
