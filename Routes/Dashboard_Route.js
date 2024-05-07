@@ -33,5 +33,12 @@ router.get("/deleteTest/:id", async (req, res) => {
     res.json(data);
 })
 
+router.get("/deleteAllTests/:project", async (req,res) => {
+    const {project} = req.params;
+    const data = await Test.deleteMany({keyName:project});
+    res.json(data);
+
+})
+
 module.exports = router;
 
